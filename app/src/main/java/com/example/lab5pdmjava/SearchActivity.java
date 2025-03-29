@@ -54,7 +54,7 @@ public class SearchActivity extends AppCompatActivity {
         textViewHeight.setVisibility(INVISIBLE);
 
         btnSearch.setOnClickListener(l->{
-            if(editTextSearchID.getText().length() == 0) showMessage("Error!", "Invalid data.", this);
+            if(editTextSearchID.getText().length() == 0) showMessage("Error! ", "Invalid data.", this);
             else {
                 String string = "SELECT * FROM student WHERE id = '" + editTextSearchID.getText()
                         + "' OR name LIKE '%"+ editTextSearchID.getText() + "%'" + "OR pren LIKE '%"+ editTextSearchID.getText() + "%'";
