@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModifyActivity">
+
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="313dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="28dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/search_part_of_name_or_id"
+        android:inputType="text"
+        android:textColorHint="#546E7A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSearchSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
+
+    <Button
+        android:id="@+id/btnSearchBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/back2"
+        app:layout_constraintStart_toEndOf="@+id/btnSearchSearch"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
+
+    <TextView
+        android:id="@+id/textViewID"
+        android:layout_width="253dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="21dp"
+        android:text="@string/add"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSearchBack" />
+
+    <TextView
+        android:id="@+id/textViewFirstName"
+        android:layout_width="253dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="11dp"
+        android:text="@string/add"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewID" />
+
+    <TextView
+        android:id="@+id/textViewLastName"
+        android:layout_width="253dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="13dp"
+        android:text="@string/add"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFirstName" />
+
+    <TextView
+        android:id="@+id/textViewDoB"
+        android:layout_width="253dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="9dp"
+        android:text="@string/add"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLastName" />
+
+    <TextView
+        android:id="@+id/textViewHeight"
+        android:layout_width="253dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="13dp"
+        android:text="@string/add"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDoB" />
+</androidx.constraintlayout.widget.ConstraintLayout>
