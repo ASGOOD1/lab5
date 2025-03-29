@@ -59,18 +59,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
         else if(v == btnViewAll) {
+            my_db = openOrCreateDatabase("Students", Context.MODE_PRIVATE, null);
+
             Cursor c = my_db.rawQuery("SELECT * FROM student", null);
             if (c.getCount() == 0) {
                 showMessage("Error", "No students found in database", this);
                 return;
             }
-            StringBuilder buffer = new StringBuilder();
+            StringBuffer buffer = new StringBuffer();
             while (c.moveToNext()) {
-                buffer.append("ID: ").append(c.getInt(0)).append("\n");
-                buffer.append("First Name: ").append(c.getString(1)).append("\n");
-                buffer.append("Last Name: ").append(c.getString(2)).append("\n");
-                buffer.append("Date of birth: ").append(c.getString(3)).append("\n");
-                buffer.append("Height: ").append(c.getString(4)).append("cm\n\n");
+                buffer.append("ID: "+c.getInt(0)+"\n");
+                buffer.append("First Name: "+c.getString(1)+"\n");
+                buffer.append("Last Name: "+c.getString(2)+"\n");
+                buffer.append("Date of birth: "+c.getString(3)+"\n");
+                buffer.append("Height: "+c.getString(4)+"cm\n\n");
             }
             showMessage("Students Data", buffer.toString(), this);
             c.close();
