@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -18,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public class SearchActivity extends AppCompatActivity {
     SQLiteDatabase my_db;
@@ -53,11 +56,27 @@ public class SearchActivity extends AppCompatActivity {
         textViewDoB.setVisibility(INVISIBLE);
         textViewHeight.setVisibility(INVISIBLE);
 
+        AtomicReference<String> search_by = new AtomicReference<>("name");
+
+        RadioButton searchFirst = findViewById(R.id.selectByFirst);
+        RadioButton searchLast = findViewById(R.id.searchByLast);
+
+        searchFirst.setOnClickListener(v->{
+            searchFirst.setChecked(true);
+            searchLast.setChecked(false);
+            search_by.set("name");
+        });
+        searchLast.setOnClickListener(v->{
+            searchFirst.setChecked(false);
+            searchLast.setChecked(true);
+            search_by.set("pren");
+        });
+
         btnSearch.setOnClickListener(l->{
             if(editTextSearchID.getText().length() == 0) showMessage("Error! ", "Invalid data.", this);
             else {
-                String string = "SELECT * FROM student WHERE id = '" + editTextSearchID.getText()
-                        + "' OR name LIKE '%"+ editTextSearchID.getText() + "%'" + "OR pren LIKE '%"+ editTextSearchID.getText() + "%'";
+
+                String string = "SELECT * FROM student WHERE "+search_by+" LIKE '%"+ editTextSearchID.getText() + "%'";
 
                 Cursor c = my_db.rawQuery(string, null);
                 if (c.getCount() == 0) {

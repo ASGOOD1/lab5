@@ -16,4 +16,7 @@
     <string name="fetch_data">Fetch Data</string>
     <string name="update">Update</string>
     <string name="search_part_of_name_or_id">Search part of name or ID</string>
+    <string name="search_by_name">Search by name</string>
+    <string name="search_by_first_name">Search by First name</string>
+    <string name="search_by_last_name">Search by Last name</string>
 </resources>
